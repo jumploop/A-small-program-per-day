@@ -38,9 +38,7 @@ def main():
         year = now.year
         month = now.month
         day = now.day
-    total = 0
-    for m in range(1, month):
-        total += get_days(year, m)
+    total = sum(get_days(year, m) for m in range(1, month))
     total += day
     print(f'{year}年{month}月{day}日是{year}年的第{total}天')
 
